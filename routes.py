@@ -28,6 +28,6 @@ def add():
         t = Task(title=form.title.data,date=dt.utcnow())
         db.session.add(t)
         db.session.commit()
-        flash('Task added to the DB')
+        flash('Task added to the Database')
         return redirect(url_for('index'))
     return render_template('add.html',form=form)
