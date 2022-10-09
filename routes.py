@@ -45,6 +45,8 @@ def edit(task_id):
             flash('Data has been update')
             return redirect(url_for('index'))
         form.title.data = task.title
+    else:
+        flash('Task not found')
         return render_template('edit.html',form=form,task_id=task_id)
 
     return redirect(url_for('index')) 
